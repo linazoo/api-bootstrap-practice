@@ -1,4 +1,11 @@
 <div class="container">
+    <% if @error %>
+        <h1 style="color:red"><%= @error %></h1>
+        <% end %>
+
+    <% if @logout %>
+    <%= @logout %>
+    <% end %>
 
     <h1> Please Log-in or Register <a href="/users/new">HERE</a></h1>
 
