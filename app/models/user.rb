@@ -19,5 +19,9 @@ class User < ApplicationRecord
     self.hashed_password = @password
   end
 
+  def authenticate(password)
+    self.password == password
+  end
+
   
 end
