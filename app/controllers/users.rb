@@ -25,6 +25,7 @@ post '/users/new' do
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     if @user.valid? 
         @user.save!
+        redirect "/users/#{@user.id}"
     else 
         redirect '/?e=1'
     end 
