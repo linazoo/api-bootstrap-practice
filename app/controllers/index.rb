@@ -1,9 +1,12 @@
 get '/' do
-  @error = "Invalid username or password" if params['e']
-  @logout = "You're logged out" if params['lo']
-  erb :login
+  redirect '/index'
+end
+
+get '/session-info' do
+  session.inspect
 end
 
 get '/index' do 
-
+  @channels = Channel.all 
+  erb :index
 end 

@@ -1,3 +1,8 @@
+get '/login' do
+    @error = "Invalid username or password" if params['e']
+    @logout = "You're logged out" if params['lo']
+    erb :login
+end 
 
 
 post '/login' do
@@ -11,16 +16,23 @@ post '/login' do
     end 
 end 
 
+
 get '/users/new' do
     erb :new
 end
   
 post '/users/new' do 
-    user = User.create
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    if @user.valid? 
+        @user.save!
+    else 
+        redirect '/?e=1'
+    end 
     erb :index
 end 
 
+
 get '/logout' do
-    session.delete(user_id: session[:username])
+    session[:user_id] = nil
     redirect '/?lo=1'
-end 
+end
