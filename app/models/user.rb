@@ -23,5 +23,12 @@ class User < ApplicationRecord
     self.password == password
   end
 
+  def total_prices
+    total = 0
+    self.channels.each do |channel| 
+      total += channel.price_per_month
+    end 
+    return total
+  end 
   
 end

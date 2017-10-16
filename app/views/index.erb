@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Welcome to Butters TV, Here are all the channels!</h1>
   <% @channels.each do |channel| %> 
-  <li> <%= channel.name %> </li>
+    <li><a href="/channels/<%=channel.id%>"> <%= channel.name %></a> </li>
   <% end %>
   <br>
   <a href="/login">Log in</a> or 

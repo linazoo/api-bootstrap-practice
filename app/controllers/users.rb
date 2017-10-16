@@ -9,7 +9,7 @@ post '/login' do
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/profile'
+      redirect "/users/#{user.id}"
         # "you've logged in!"
     else
         redirect '/?e=1'
@@ -36,3 +36,8 @@ get '/logout' do
     session[:user_id] = nil
     redirect '/?lo=1'
 end
+
+get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :profile
+end 
