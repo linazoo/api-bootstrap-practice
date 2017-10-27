@@ -73,3 +73,15 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+.darkBG{
+  background: #999;
+}
+
+.darkerBG{
+  background: #666;
+}
+
+.darkestBG {
+  background: #333;
+}
