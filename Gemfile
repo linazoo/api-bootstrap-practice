@@ -18,6 +18,7 @@ gem 'bcrypt-ruby'
 gem 'shotgun'
 
 gem 'faker', '~> 1.7.3'
+gem 'bootstrap', '~> 4.0.0.beta2'
 
 group :development, :test do
   gem 'rspec', '~> 3.5'
