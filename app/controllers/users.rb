@@ -42,3 +42,10 @@ get '/users/:id' do
     @user = User.find(params[:id])
     erb :profile
 end 
+
+#still to implement
+#user authentication - limit the routes that people can go to 
+#before filters (craigslist solution from joel)
+
+#new users can't subscribe to channels (maybe they are duplicate?)
+#limitations on what they can subscribe to? 
