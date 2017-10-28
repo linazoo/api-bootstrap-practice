@@ -1,0 +1,15 @@
+<div class="container"> 
+  <a href="/channels/<%=@channel.id%>/subscribe">Subscribe to this channel</a>
+
+  <h1> The <%= @channel.name %> Channel </h1>
+  <br>
+  <p> Callsign: <%= @channel.callsign%> </p>
+  <p> Price: $<%= @channel.price_per_month%></p>
+  <br>
+  <h3> People who have subscribed to this channel:</h3>
+  <% @channel.subscribers.each do |subscriber| %>
+    <h4><%= subscriber.first_name %> <%= subscriber.last_name %></h4> 
+       <%= subscriber.email %>
+       <br>
+  <% end %>
+</div>

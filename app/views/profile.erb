@@ -1,0 +1,9 @@
+<h1> Hello <%= @user.first_name %>! Welcome to your profile.</h1>
+<h2> Here are your subcriptions</h2>
+<% @user.channels.each do |channel|%>
+    <li><%= channel.name %> </li>
+<% end %>
+<br>
+<h2>
+The total price of all your channels:
+$<%= @user.total_prices %>

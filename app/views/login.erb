@@ -1,0 +1,24 @@
+<div class="container">
+    <% if @error %>
+        <h1 style="color:red"><%= @error %></h1>
+        <% end %>
+
+    <% if @logout %>
+    <%= @logout %>
+    <% end %>
+
+    <h1> Please Log-in or Register <a href="/users/new">HERE</a></h1>
+
+    <form action="/login" method="post">
+        <label for="email">Your email:</label>
+        <input type="text" name="email" />
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br>
+
+        <input type="submit" value="Login">
+        or <a href ="/logout">Logout</a>
+    </form>
+</div >

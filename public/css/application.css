@@ -5,9 +5,14 @@
   border: 1px dotted black;
 }
 
-.container h1 {
+/* .container h1 {
   font-size: 17pt;
 
+} */
+
+
+.yo {
+  font-size: 48px;
 }
 
 nav {
@@ -72,4 +77,16 @@ form.quirks {
   text-align: right;
   margin-right: 20px;
   width: 200px;
+}
+
+.darkBG{
+  background: #999;
+}
+
+.darkerBG{
+  background: #666;
+}
+
+.darkestBG {
+  background: #333;
 }
